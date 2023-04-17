@@ -1,0 +1,11 @@
+@Tutorials(name: "Library guide") {
+    @Intro(title: "Exam proctoring") {
+        After reading the documentation and guide, you will learn how to use the library correctly and as efficiently as possible.
+    }
+    
+    @Chapter(name: "Implementation") {
+        The tutorial contains information about which methods to call and in what order, as well as a description of the delegates
+        
+        @TutorialReference(tutorial: "doc:Implementation")
+    }
+}
