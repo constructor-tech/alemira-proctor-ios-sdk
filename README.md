@@ -1,4 +1,4 @@
-# AlemiraProctor v1.0.0
+# AlemiraProctor v2.0.0
 
 The library provides proctoring functions
 
