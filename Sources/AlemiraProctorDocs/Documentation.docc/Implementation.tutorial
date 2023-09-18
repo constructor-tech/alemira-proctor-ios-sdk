@@ -1,18 +1,17 @@
 @Tutorial(time: 5) {
     @Intro(title: "Proctoring") {
         The tutorial will help you understand which methods to call and in what order.
-        
     }
     
     @Section(title: "Main methods") {
         @ContentAndMedia {
             This section contains methods that you must call in order to correctly start the session.
-            
         }
         
         @Steps {
             @Step {
-                First you need to initialize the session with a link like Alemira://
+                First you need to initialize the session with a link like `Alemira://`.
+                
                 Returns true if the session has already started and can be continued. False if the session has not been started or received chunks.
                 
                 If the error is due to the fact that the exam does not exist, cannot be started yet, or the link is not valid, it will return `AlemiraError.InitSessionErrorReason`. If the error was due to something else, then another appropriate `AlemiraError` type will be returned.
@@ -23,7 +22,7 @@
             @Step {
                 After that user should accept a license agreement.
                 
-                You can get an agreement using a `getAgreement()` method
+                You can get an agreement using a `getAgreement()` method.
                 
                 @Code(name: "Accept agreement.swift", file: Proctoring-1-2-agreement.swift)
             }
@@ -42,7 +41,7 @@
             }
             
             @Step {
-                When sending a photo, it is necessary to pass photo date to the method, as well as the type of photo from PhotoType enumeration .
+                When sending a photo, it is necessary to pass photo date to the method, as well as the type of photo from PhotoType enumeration.
                 
                 @Code(name: "Send photo.swift", file: Proctoring-1-5-sendPhoto.swift)
             }
@@ -50,13 +49,13 @@
             @Step {
                 After uploading the photos, the library will be ready to start proctoring. To do this, you need to call the start method. If the user accepts the switch to single app mode and starts screen recording, a link to the exam will be returned in response. 
                 
-                In some cases, it can be missing, which will lead to an error. If this happens - call the method again if no error method was called while preparing the session
+                In some cases, it can be missing, which will lead to an error. If this happens - call the method again if no error method was called while preparing the session.
                 
                 @Code(name: "Start proctoring.swift", file: Proctoring-1-6-startProctoring.swift)
             }
             
             @Step {
-                When the user wants to complete the exam, it is necessary to send information about this to the library
+                When the user wants to complete the exam, it is necessary to send information about this to the library.
                 
                 @Code(name: "Stop proctoring.swift", file: Proctoring-1-7-stopProctoring.swift)
             }
@@ -64,9 +63,16 @@
             @Step {
                 You can disable the single app mode if the user has lost the Internet connection. 
                 
-                When you turn it on and off, you will get a delegate method about interrupting and resuming
+                When you turn it on and off, you will get a delegate method about interrupting and resuming.
                 
                 @Code(name: "Change single app mode state.swift", file: Proctoring-1-8-changeSingleAppMode.swift)
+            }
+            
+            @Step {
+                You can capture an image from the front camera of the device and perform a facial recognition check on this image.  
+                
+                
+                @Code(name: "Capture front camera.swift", file: Proctoring-1-8-changeSingleAppMode.swift)
             }
         }
     }
@@ -77,7 +83,7 @@
         }
         @Steps {
             @Step {
-                During the preparation of the session, it is necessary to conforms the protocol 'SessionPreparationDelegate'. 
+                During the preparation of the session, it is necessary to conforms the protocol `SessionPreparationDelegate`. 
                 
                 Then, if the photo is rejected by a proctor, there was an error getting the link to the exam or everything is ok and exam link was received, the library will call the appropriate method.
                 
